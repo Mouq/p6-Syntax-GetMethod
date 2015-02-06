@@ -1,8 +1,8 @@
-## Syntax::GetMethod
+# Syntax::GetMethod
 
 Implements syntactic sugar for getting the method of a package.
 
-# Synopsis
+## Synopsis
 
     use Syntax::GetMethod;
 
@@ -25,7 +25,7 @@ Implements syntactic sugar for getting the method of a package.
     say $am.whoami; # "Uhh..."
     say recall-name $am; # "Margaret"
 
-# Motivation
+## Motivation
 
 Languages with a focus on the functional paradigm, (Javascript will be as an
 example), generally allow for syntactically simple retrieval of method-objects.
@@ -42,7 +42,7 @@ used:
 This topic comes up with some regularity on #perl6, and the best solution that
 can be offered is "use the metamodel".
 
-# Description
+## Description
 
 A potential alternative to the above in Perl 6 could be:
 
@@ -56,7 +56,7 @@ This has the advantages of being similar to package lookup syntax of the form
 is then interpreted as getting `$foo.::my-method` and then calling it with
 `$bar` as the invocant. Similarly with multiple arguments.
 
-# Issues
+## Issues
 
 Currently, `$foo.::my-method` *will* be parsed, however in all cases it is
 exactly equivalent to `$foo.my-method`. The probability that anyone is using
