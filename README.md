@@ -28,8 +28,8 @@ Implements syntactic sugar for getting the method of a package.
 ## Motivation
 
 Languages with a focus on the functional paradigm, (Javascript will be as an
-example), generally allow for syntactically simple retrieval of method-objects.
-Javascript simply requires omission of parentheses:
+example<sup>1</sup>), generally allow for syntactically simple retrieval of
+method-objects.  Javascript simply requires omission of parentheses:
 
     foo.my-method
 
@@ -69,3 +69,6 @@ One of the issues in *this* implementation is that augmenting Mu to support
 `dispatch:<.::>` doesn't augment all the other classes to support it. I'm not
 sure if this is correct behavior. However, having this syntax in core would
 solve this issue.
+
+<sup>1</sup> Yes, I know that Javascript has a vastly different idea of what a
+"method" is.
