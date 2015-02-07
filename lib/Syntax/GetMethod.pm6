@@ -13,13 +13,13 @@ role Syntax::GetMethod::Grammar {
 }
 
 augment class Mu {
-    proto method dispatch:<.::>(Mu \SELF: $name, |c) {*}
-    multi method dispatch:<.::>(Mu \SELF: $name) {
+    method dispatch:<.::>(Mu \SELF: $name) {
         SELF.^find_method($name)
     }
-    multi method dispatch:<.::>(Mu \SELF: $name, |c) {
-        SELF.^find_method($name)(|c)
-    }
+#    proto method dispatch:<.::>(Mu \SELF: $name, |c) {*}
+#    multi method dispatch:<.::>(Mu \SELF: $name, |c) {
+#        SELF.^find_method($name)(|c)
+#    }
 }
 
 sub slangify ($role, :$into = 'MAIN') {

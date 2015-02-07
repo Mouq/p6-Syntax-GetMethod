@@ -51,10 +51,20 @@ A potential alternative to the above in Perl 6 could be:
 This has the advantages of being similar to package lookup syntax of the form
 `$foo::our-sub`, or `$foo.Bar::bar's-method` and being unused by any other construct.
 
+**OLD:**
+
     $foo.::my-method($bar)
 
 is then interpreted as getting `$foo.::my-method` and then calling it with
 `$bar` as the invocant. Similarly with multiple arguments.
+
+**EDIT:**
+
+From IRC: raydiak says: ".::bar() and .::bar('stuff') are all of a sudden very
+different and I don't see a use-case for it ... sounds most sane to disallow
+[passing arguments to dispatch:<.::>] unless you can think of *any reason
+whatsoever* to use .:: instead of . for that case :)" ... er, well, not really.
+Revoking that feature barring further discussion.
 
 ## Issues
 
